@@ -11,8 +11,8 @@
     <div class="firstBox">
         <nav>
             <p>adrian_lascano@dlsu.edu.ph</p>
-            <button>loading..</button>  
-            <button>loading..</button>
+            <button>Instagram</button>  
+            <button>About Me</button>
         </nav>
         <img src="Animated.jpeg" alt="img">
         <p class="name adrian">ADRIAN</p>
@@ -78,13 +78,16 @@
 
     <footer class="fourthBox">
         <h2>Tell me about your next project</h2>
-        <div><button id="nextProject">✉️ Email</button></div>
+        <button id="nextProject">✉️ Email</button>
         <p id="bottomFooter">Design inspired by Pinterest — code, content, and customization by Adrian George Andres.</p>
     </footer>
 
 <script>
-    document.getElementById("Project").onclick = function(){
-        location.href = "AGA Composition/index.html";
+    document.getElementById("latestProject").onclick = function(){
+        location.href = "https://adrian-lascano.github.io/MAas-Compositions/";
+    };
+    document.getElementById("nextProject").onclick = function() {
+        window.open("https://mail.google.com/mail/?view=cm&fs=1&to=adrian_lascano@dlsu.edu.ph&su=Collab!&body=Hello!+Let%27s+collaborate!","_blank");
     };
 </script>
 </body>
