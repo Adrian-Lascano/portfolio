@@ -30,7 +30,7 @@ html, body{
         background-color: white;
         border-radius: 50px;
         border: none;
-        width: 130px;
+        max-width: 130px;
         padding: 0 1%;
         font-size: 1vw;
     }
