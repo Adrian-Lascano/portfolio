@@ -14,7 +14,7 @@ html, body{
     border-radius: 0 0 70px 70px;
     width: 100%;
     height: 100vh;
-    padding: 1% 1% 5% 1%;
+    padding: 1.5% 1% 5% 2%;
     text-align: center;
     position: relative;
     z-index: 4;
@@ -24,13 +24,15 @@ html, body{
         display: flex;
         flex-direction: row;
         font-size: 1vw;
-        gap: 10px;
+        gap: 15px;
     }
     nav button{
         background-color: white;
         border-radius: 50px;
         border: none;
-        padding: 1%;
+        width: 140px;
+        padding: 0 1%;
+        font-size: 1vw;
     }
     .firstBox img{
         border: 2px solid black;
@@ -81,6 +83,57 @@ html, body{
     .secondBox img{
         width: 80px;
         
+    }
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+    .popupContent{
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        max-width: 700px;
+        width: 90%;
+        z-index: 2;
+        font-size: 1.5vw;
+    }
+    .popupContent h3{
+        margin-top: 0;
+    }
+    .popupContent ul{
+        list-style-type: none;
+        padding: 0;
+    }
+    .popupContent li{
+        margin: 10px 0;
+    }
+    .popupContent a{
+        text-decoration: none;
+        color: black;
+    }
+    .popupContent a:hover{
+        text-decoration: underline;
+    }
+    .hidden{
+        display: none;
+    }
+    .backdrop{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent black overlay */
+        z-index: 1;  /* Behind the content */
     }
 .thirdBox{
     background-color: rgb(234, 234, 234);
