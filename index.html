@@ -11,8 +11,8 @@
     <div class="firstBox">
         <nav>
             <p>adrian_lascano@dlsu.edu.ph</p>
-            <button>Instagram</button>  
-            <button>About Me</button>
+            <button id="instagram">Instagram</button>
+            <button id="myPlayground">My Playground</button>
         </nav>
         <img src="Animated.jpeg" alt="img">
         <p class="name adrian">ADRIAN</p>
@@ -26,6 +26,17 @@
         <img src="logo_vscode.png" alt="VS Code">
         <img src="logo_MAas.png" alt="MAas Compositions">
         <a href="https://open.spotify.com/user/226hgyyt43nx4ncoqfb25veyq?si=86e387a61db6467c" target="_blank"><img src="logo_spotify.svg" alt="Spotify"></a>
+    </div>
+
+    <div id="playgroundPopup" class="popup hidden">
+        <div class="backdrop"></div>
+        <div class="popupContent">
+            <h3>My Creativity!</h3>
+            <ul>
+                <li><a href="https://adrian-lascano.github.io/MAas-Compositions/" target="_blank">MAas Compositions</a></li>
+                <li><a href="#" target="_blank">loading..</a></li>
+            </ul>
+        </div>
     </div>
 
     <div class="thirdBox">
@@ -83,11 +94,20 @@
     </footer>
 
 <script>
+    document.getElementById("instagram").onclick = function(){
+        window.open("https://www.instagram.com/landres_79?","_blank");
+    };
     document.getElementById("latestProject").onclick = function(){
         location.href = "https://adrian-lascano.github.io/MAas-Compositions/";
     };
     document.getElementById("nextProject").onclick = function() {
         window.open("https://mail.google.com/mail/?view=cm&fs=1&to=adrian_lascano@dlsu.edu.ph&su=Collab!&body=Hello!+Let%27s+collaborate!","_blank");
+    };
+    document.getElementById("myPlayground").onclick = function(){
+        document.getElementById("playgroundPopup").classList.remove("hidden");
+    };
+    document.querySelector(".backdrop").onclick = function(){
+        document.getElementById("playgroundPopup").classList.add("hidden");
     };
 </script>
 </body>
