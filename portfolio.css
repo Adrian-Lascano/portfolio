@@ -221,6 +221,9 @@ html, body {
         color: whitesmoke;
         font-size: 1.5vw;
     }
+    #nextProject {
+        background-color: grey;
+    }
 
 /* ===================== */
 /* Tablet/iPad Overrides */
