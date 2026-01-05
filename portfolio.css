@@ -303,7 +303,7 @@ body[data-device="Tablet/iPad"] .fourthBox {
 /* ===================== */
 
 body[data-device="Phone"] .firstBox {
-    height: 55vh; /* Shorter for phone */
+    height: 55%; /* Shorter for phone */
     padding: 3% 2% 5% 2%;
 }
     body[data-device="Phone"] .firstBox nav {
