@@ -221,7 +221,7 @@ html, body {
         color: whitesmoke;
         font-size: 1.5vw;
     }
-    #nextProject {
+    #nextProject:hover {
         background-color: grey;
     }
 
