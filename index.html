@@ -7,7 +7,6 @@
     <title>AGABL Portfolio</title>
 </head>
 <body>
-
     <div class="firstBox">
         <nav>
             <p>adrian_lascano@dlsu.edu.ph</p>
@@ -32,10 +31,7 @@
         <div class="backdrop"></div>
         <div class="popupContent">
             <h3>My Creative Playground!</h3>
-            <ul>
-                <li><a href="https://adrian-lascano.github.io/MAas-Compositions/" target="_blank">MAas Compositions</a></li>
-                <li><a href="#" target="_blank">loading..</a></li>
-            </ul>
+            <ul id="workLinks"></ul>
         </div>
     </div>
 
@@ -87,15 +83,16 @@
         </div>
     </div>
 
-    <footer class="fourthBox">
+    <div class="fourthBox">
         <h2>Tell me about your next project</h2>
         <button id="nextProject">✉️ Email</button>
         <p id="bottomFooter">Design inspired by Pinterest — code, content, and customization by Adrian George Andres.</p>
-    </footer>
+    </div>
 
+<script src="portfolioLinks.js"></script>
 <script>
     document.getElementById("instagram").onclick = function(){
-        window.open("https://www.instagram.com/landres_79?","_blank");
+        window.open("https://www.instagram.com/landres_79?");
     };
     document.getElementById("latestProject").onclick = function(){
         window.open("https://adrian-lascano.github.io/MAas-Compositions/","_blank");
@@ -103,12 +100,62 @@
     document.getElementById("nextProject").onclick = function() {
         window.open("https://mail.google.com/mail/?view=cm&fs=1&to=adrian_lascano@dlsu.edu.ph&su=Collab!&body=Hello!+Let%27s+collaborate!","_blank");
     };
+
     document.getElementById("myPlayground").onclick = function(){
-        document.getElementById("playgroundPopup").classList.remove("hidden");
+        const popup = document.getElementById("playgroundPopup");
+        popup.classList.remove("hidden");
+        popup.querySelector(".popupContent").classList.add("active");
     };
     document.querySelector(".backdrop").onclick = function(){
-        document.getElementById("playgroundPopup").classList.add("hidden");
+        const popup = document.getElementById("playgroundPopup");
+        popup.classList.add("hidden");
+        popup.querySelector(".popupContent").classList.remove("active");
     };
+
+    const menu = document.getElementById("workLinks");
+        if(typeof portfolioLinks !== 'undefined') {
+            Object.entries(portfolioLinks)
+                .sort((a, b) => a[1].projectName.localeCompare(b[1].projectName))
+                .forEach(([key, project]) => {
+                    const li = document.createElement("li");
+                    const a = document.createElement("a");
+                    a.href = key;
+                    a.target = "_blank";
+                    a.textContent = project.projectName;
+                    li.appendChild(a);
+                    menu.appendChild(li);
+                    });
+        }
+        else {
+            console.error("portfolioLinks is not defined.");
+        }
+// Check user's device
+	function detectDevice() {
+		const body = document.body;
+		const width = window.innerWidth;
+		const height = window.innerHeight;
+		const isPortrait = height > width;
+
+		let device;
+
+		if (width > 1200) {
+			device = "Desktop";
+		} else if (isPortrait && width <= 768) {
+			device = "Phone";
+		} else {
+			device = "Tablet/iPad";
+		}
+
+		body.setAttribute("data-device", device);
+		document.getElementById("debug").innerHTML = device;
+		console.log("Width:", width, "Height:", height, "Orientation:", isPortrait ? "Portrait" : "Landscape", "Device:", device);
+	}
+// Call detectDevice on page load
+	document.addEventListener("DOMContentLoaded", function() {
+		detectDevice();
+	});
+// Optional: Also call on window resize for dynamic updates
+	window.addEventListener("resize", detectDevice);
 </script>
 </body>
 </html>

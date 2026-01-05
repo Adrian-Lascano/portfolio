@@ -1,15 +1,20 @@
-html, body{
+/* ===================== */
+/* Desktop (Base Styles) */
+/* ===================== */
+
+html, body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
     overflow-x: hidden;
-    box-sizing: border-box;font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
-*{
+* {
     box-sizing: inherit;
 }
-.firstBox{
+.firstBox {
     background-color: rgb(234, 234, 234);
     border-radius: 0 0 70px 70px;
     width: 100%;
@@ -19,38 +24,42 @@ html, body{
     position: relative;
     z-index: 4;
 }
-    .firstBox nav{
+    .firstBox nav {
         margin-bottom: 40px;
         display: flex;
         flex-direction: row;
         font-size: 1vw;
         gap: 15px;
     }
-    nav button{
+    nav button {
         background-color: white;
         border-radius: 50px;
         border: none;
-        max-width: 130px;
+        width: 130px;
         padding: 0 1%;
         font-size: 1vw;
     }
-    .firstBox img{
+    nav button:hover {
+        background-color: lightgrey;
+
+    }
+    .firstBox img {
         border: 2px solid black;
         border-radius: 50%;
         margin-bottom: 20px;
         width: 200px;
         height: 200px;
     }
-    .name{
+    .name {
         font-weight: 800;
         font-size: 4vw;
         letter-spacing: 4px;
         margin: 0.1em;
     }
-    .george{
+    .george {
         letter-spacing: 7px;
     }
-    #latestProject{
+    #latestProject {
         background-color: black;
         border-radius: 50px;
         border: none;
@@ -60,7 +69,10 @@ html, body{
         color: whitesmoke;
         font-size: 1.2vw;
     }
-.secondBox{
+    #latestProject:hover {
+        background-color: grey;
+    }
+.secondBox {
     background-color: rgb(255, 255, 255);
     border-radius: 0 0 70px 70px;
     width: 100%;
@@ -75,14 +87,16 @@ html, body{
     position: relative;
     z-index: 3;
 }
-    .secondBox a{
+    .secondBox a {
         text-decoration: none;
         text-shadow: none;
         color: black;   /* for when image wont load */
     }
-    .secondBox img{
+    a img:hover {
+        width: 85px;
+    }
+    .secondBox img {
         width: 80px;
-        
     }
 .popup {
     position: fixed;
@@ -96,47 +110,60 @@ html, body{
     align-items: center;
     z-index: 5;
 }
-    .backdrop{
+    .backdrop {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent black overlay */
-        z-index: 1;  /* Behind the content */
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
     }
-    .popupContent{
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        max-width: 500px;
-        width: 90%;
-        z-index: 2;
-        font-size: 1.7vw;
+    .popupContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    z-index: 2;
+    font-size: 1.7vw;
+    opacity: 0;
+    transform: scale(0.3);
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Faster, smoother zoom-in */
     }
-    .popupContent h3{
+
+    .popupContent.active {
+        opacity: 1;
+        transform: scale(1.0);
+    }
+    .hidden {
+        visibility: hidden;
+        pointer-events: none;
+    }
+    .hidden .popupContent {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    .popupContent h3 {
         margin-top: 0;
     }
-    .popupContent ul{
+    .popupContent ul {
         list-style-type: none;
         padding: 0;
         font-size: 1.2vw;
     }
-    .popupContent li{
+    #workLinks li {
         margin: 10px 0;
     }
-    .popupContent a{
+    #workLinks a {
         text-decoration: none;
         color: black;
     }
-    .popupContent a:hover{
+    #workLinks a:hover {
         text-decoration: underline;
     }
-    .hidden{
-        display: none;
-    }
-.thirdBox{
+.thirdBox {
     background-color: rgb(234, 234, 234);
     width: 100%;
     height: 120vh;
@@ -146,16 +173,16 @@ html, body{
     position: relative;
     z-index: 1;
 }
-    .thirdBox h2{
+    .thirdBox h2 {
         font-weight: 600;
         font-size: 2.5vw;
     }
-    #subtext{
+    #subtext {
         margin-top: -1em;
         font-size: 2vw;
         line-height: 1.5em;
     }
-    .skills{
+    .skills {
         margin-top: 80px;
         display: flex;
         flex-direction: row;
@@ -163,15 +190,15 @@ html, body{
         text-align: left;
         gap: 5%;
     }
-    .skills h3{
+    .skills h3 {
         font-size: 1.5vw;
         filter: grayscale(100%);
         line-height: 2em;
     }
-    .skill{
+    .skill {
         width: 15%;
     }
-.fourthBox{
+.fourthBox {
     background-color: rgb(255, 255, 255);
     border-radius: 70px 70px 0 0;
     padding: 5% 1% 1%;
@@ -181,10 +208,10 @@ html, body{
     position: relative;
     z-index: 2;
 }
-    .fourthBox h2{
+    .fourthBox h2 {
         font-size: 3vw;
     }
-    #nextProject{
+    #nextProject {
         background-color: black;
         border-radius: 50px;
         border: none;
@@ -193,4 +220,164 @@ html, body{
         height: 50px;
         color: whitesmoke;
         font-size: 1.5vw;
+    }
+
+/* ===================== */
+/* Tablet/iPad Overrides */
+/* ===================== */
+
+body[data-device="Tablet/iPad"] .firstBox {
+    height: 100vh; /* Slightly shorter */
+    padding: 2% 1% 5% 2%;
+    }
+    body[data-device="Tablet/iPad"] .firstBox nav {
+        font-size: 1.2vw; /* Slightly larger */
+        gap: 12px;
+    }
+    body[data-device="Tablet/iPad"] nav button {
+        width: 120px; /* Smaller buttons */
+        font-size: 1.2vw;
+    }
+    body[data-device="Tablet/iPad"] .firstBox img {
+        width: 150px; /* Smaller image */
+        height: 150px;
+    }
+    body[data-device="Tablet/iPad"] .name {
+        font-size: 3.5vw; /* Reduced */
+        margin: 0;
+    }
+    body[data-device="Tablet/iPad"] #latestProject {
+        width: 180px; /* Smaller button */
+        height: 45px;
+        font-size: 1.1vw;
+    }
+body[data-device="Tablet/iPad"] .secondBox {
+    height: 30vh; /* Shorter */
+    gap: 180px; /* Smaller gap */
+    padding-top: 7.5%; /* Longer Space */
+}
+    body[data-device="Tablet/iPad"] .secondBox img {
+        width: 60px; /* Smaller icons */
+    }
+body[data-device="Tablet/iPad"] .popupContent {
+    font-size: 2vw; /* Bigger font */
+}
+    body[data-device="Tablet/iPad"] .popupContent ul {
+        font-size: 1.5vw; /* Bigger font */
+    }
+body[data-device="Tablet/iPad"] .thirdBox {
+    height: 120vh; /* Shorter */
+    padding: 20% 1% 5% 1%;
+}
+    body[data-device="Tablet/iPad"] .thirdBox h2 {
+        font-size: 2.2vw; /* Reduced */
+    }
+    body[data-device="Tablet/iPad"] #subtext {
+        font-size: 1.8vw; /* Reduced */
+    }
+    body[data-device="Tablet/iPad"] .skills {
+        margin-top: 40px;
+        gap: 4%; /* Smaller gap */
+    }
+    body[data-device="Tablet/iPad"] .skills h3 {
+        font-size: 1.3vw; /* Reduced */
+    }
+    body[data-device="Tablet/iPad"] .skill {
+        width: 18%; /* Wider for fit */
+    }
+body[data-device="Tablet/iPad"] .fourthBox {
+    padding: 3% 1% 1%;
+}
+    body[data-device="Tablet/iPad"] .fourthBox h2 {
+        font-size: 2.5vw; /* Reduced */
+    }
+    body[data-device="Tablet/iPad"] #nextProject {
+            margin: 15px 0 35px;
+    }
+
+/* ===================== */
+/* Phone Overrides       */
+/* ===================== */
+
+body[data-device="Phone"] .firstBox {
+    height: 55vh; /* Shorter for phone */
+    padding: 3% 2% 5% 2%;
+}
+    body[data-device="Phone"] .firstBox nav {
+        font-size: 2.5vw; /* Larger */
+        gap: 10px;
+        margin-bottom: 20px;
+        justify-content: center;
+    }
+    body[data-device="Phone"] nav button {
+        width: 120px; /* Wider for touch */
+        padding: 10px 1%;
+        font-size: 3vw;
+    }
+    body[data-device="Phone"] .firstBox img {
+        width: 170px; /* Smaller image */
+        height: 170px;
+    }
+    body[data-device="Phone"] .name {
+        font-size: 8.5vw; /* Larger */
+    }
+    body[data-device="Phone"] #latestProject {
+        width: 180px;
+        height: 50px;
+        font-size: 3vw;
+        margin-top: 30px;
+    }
+body[data-device="Phone"] .secondBox {
+    height: 17vh; /* Shorter */
+    gap: 50px; /* Smaller gap */
+    padding-top: 17%;
+}
+    body[data-device="Phone"] .secondBox img {
+        width: 45px; /* Smaller icons */
+    }
+    body[data-device="Phone"] a img:hover {
+        width: 50px;
+    }
+body[data-device="Phone"] .popupContent {
+    font-size: 5vw; /* Larger for readability */
+    padding: 15px;
+    width: 80%;
+}
+    body[data-device="Phone"] .popupContent ul {
+        font-size: 4vw;
+    }
+body[data-device="Phone"] .thirdBox {
+    height: 112vh; /* Adjusted */
+    padding: 50% 2% 5% 2%;
+}
+    body[data-device="Phone"] .thirdBox h2 {
+        font-size: 5vw; /* Larger */
+    }
+    body[data-device="Phone"] #subtext {
+        font-size: 4vw; /* Larger */
+    }
+    body[data-device="Phone"] .skills {
+        align-items: center;
+        flex-direction: column; /* Stack skills */
+        gap: 20px;
+        margin-top: 5%;
+    }
+    body[data-device="Phone"] .skills h3 {
+        font-size: 3vw; /* Larger */
+    }
+    body[data-device="Phone"] .skill {
+        width: 80%; /* Full width */
+        text-align: center; /* Center text */
+    }
+body[data-device="Phone"] .fourthBox {
+    padding: 5% 2% 2%;
+}
+    body[data-device="Phone"] .fourthBox h2 {
+        font-size: 5vw; /* Larger */
+    }
+    body[data-device="Phone"] #nextProject {
+        width: 170px;
+        height: 60px;
+        font-size: 3.5vw;
+        margin: 20px 0 40px;
     }
