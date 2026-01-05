@@ -18,8 +18,7 @@ html, body {
     background-color: rgb(234, 234, 234);
     border-radius: 0 0 70px 70px;
     width: 100%;
-    max-height: 110vh;
-    min-height: 65svh;
+    height: 100vh;
     padding: 1.5% 1% 5% 2%;
     text-align: center;
     position: relative;
@@ -304,7 +303,7 @@ body[data-device="Tablet/iPad"] .fourthBox {
 /* ===================== */
 
 body[data-device="Phone"] .firstBox {
-    height: auto;
+    height: 70vh;
     padding: 3% 2% 5% 2%;
 }
     body[data-device="Phone"] .firstBox nav {
