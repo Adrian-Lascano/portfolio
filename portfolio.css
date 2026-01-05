@@ -353,7 +353,7 @@ body[data-device="Phone"] .popupContent {
     }
 body[data-device="Phone"] .thirdBox {
     min-height: auto;
-    padding: 50% 2% 5% 2%;
+    padding: 50% 2% 15% 2%;
 }
     body[data-device="Phone"] .thirdBox h2 {
         font-size: 5vw; /* Larger */
