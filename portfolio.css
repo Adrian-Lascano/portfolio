@@ -332,9 +332,9 @@ body[data-device="Phone"] .firstBox {
         margin-top: 30px;
     }
 body[data-device="Phone"] .secondBox {
-    height: 17vh; /* Shorter */
+    height: 20vh; /* Shorter */
     gap: 50px; /* Smaller gap */
-    padding-top: 17%;
+    padding-top: 20%;
 }
     body[data-device="Phone"] .secondBox img {
         width: 45px; /* Smaller icons */
