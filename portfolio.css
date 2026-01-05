@@ -18,7 +18,8 @@ html, body {
     background-color: rgb(234, 234, 234);
     border-radius: 0 0 70px 70px;
     width: 100%;
-    height: 100vh;
+    max-height: 100vh;
+    min-height: 60svh;
     padding: 1.5% 1% 5% 2%;
     text-align: center;
     position: relative;
@@ -303,7 +304,7 @@ body[data-device="Tablet/iPad"] .fourthBox {
 /* ===================== */
 
 body[data-device="Phone"] .firstBox {
-    height: 550px; /* Shorter for phone */
+    height: auto;
     padding: 3% 2% 5% 2%;
 }
     body[data-device="Phone"] .firstBox nav {
@@ -362,7 +363,6 @@ body[data-device="Phone"] .thirdBox {
     body[data-device="Phone"] .skills {
         align-items: center;
         flex-direction: column; /* Stack skills */
-        gap: 20px;
         margin-top: 5%;
     }
     body[data-device="Phone"] .skills h3 {
