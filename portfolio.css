@@ -306,6 +306,7 @@ body[data-device="Phone"] .firstBox {
     height: 80vh;
     padding: 3% 2% 5% 2%;
     margin-top: -10px;
+    border: 1px solid black;
 }
     body[data-device="Phone"] .firstBox nav {
         font-size: 2.5vw; /* Larger */
@@ -335,6 +336,7 @@ body[data-device="Phone"] .secondBox {
     height: 25vh; /* Shorter */
     gap: 50px; /* Smaller gap */
     padding-top: 20%;
+    border: 1px solid black;
 }
     body[data-device="Phone"] .secondBox img {
         width: 45px; /* Smaller icons */
@@ -353,6 +355,7 @@ body[data-device="Phone"] .popupContent {
 body[data-device="Phone"] .thirdBox {
     height: 130svh;
     padding: 50% 2% 30% 5%;
+    border: 1px solid black;
 }
     body[data-device="Phone"] .thirdBox h2 {
         font-size: 5vw; /* Larger */
@@ -374,6 +377,7 @@ body[data-device="Phone"] .thirdBox {
     }
 body[data-device="Phone"] .fourthBox {
     padding: 5% 2% 2%;
+    border: 1px solid black;
 }
     body[data-device="Phone"] .fourthBox h2 {
         font-size: 5vw; /* Larger */
