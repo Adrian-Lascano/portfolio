@@ -374,7 +374,7 @@ body[data-device="Phone"] .thirdBox {
     }
 body[data-device="Phone"] .fourthBox {
     padding: 5% 2% 2%;
-    margin-top: -25px;
+    margin-top: 0;
 }
     body[data-device="Phone"] .fourthBox h2 {
         font-size: 5vw; /* Larger */
