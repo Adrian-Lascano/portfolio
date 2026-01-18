@@ -90,7 +90,7 @@ html, body {
     .secondBox a {
         text-decoration: none;
         text-shadow: none;
-        color: black;   /* for when image wont load */
+        color: black;
     }
     a img:hover {
         width: 85px;
@@ -130,7 +130,7 @@ html, body {
     font-size: 1.7vw;
     opacity: 0;
     transform: scale(0.3);
-    transition: transform 0.5s ease, opacity 0.5s ease; /* Faster, smoother zoom-in */
+    transition: transform 0.5s ease, opacity 0.5s ease;
     }
 
     .popupContent.active {
@@ -303,12 +303,13 @@ body[data-device="Tablet/iPad"] .fourthBox {
 /* ===================== */
 
 body[data-device="Phone"] .firstBox {
-    height: 70vh;
+    height: 80vh;
     padding: 3% 2% 5% 2%;
+    margin-top: -10px;
 }
     body[data-device="Phone"] .firstBox nav {
         font-size: 2.5vw; /* Larger */
-        gap: 10px;
+        gap: 8px;
         margin-bottom: 20px;
         justify-content: center;
     }
@@ -373,6 +374,7 @@ body[data-device="Phone"] .thirdBox {
     }
 body[data-device="Phone"] .fourthBox {
     padding: 5% 2% 2%;
+    margin-top: -25px;
 }
     body[data-device="Phone"] .fourthBox h2 {
         font-size: 5vw; /* Larger */
