@@ -352,7 +352,7 @@ body[data-device="Phone"] .popupContent {
     }
 body[data-device="Phone"] .thirdBox {
     height: 130svh;
-    padding: 50% 2% 30% 2%;
+    padding: 50% 2% 30% 5%;
 }
     body[data-device="Phone"] .thirdBox h2 {
         font-size: 5vw; /* Larger */
@@ -374,7 +374,6 @@ body[data-device="Phone"] .thirdBox {
     }
 body[data-device="Phone"] .fourthBox {
     padding: 5% 2% 2%;
-    margin-top: 0;
 }
     body[data-device="Phone"] .fourthBox h2 {
         font-size: 5vw; /* Larger */
