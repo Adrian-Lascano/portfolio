@@ -1,0 +1,161 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="portfolio.css">
+	<link rel="Icon" href="Title_Icon.png">
+    <title>AGABL Portfolio</title>
+</head>
+<body>
+    <div class="firstBox">
+        <nav>
+            <p>lascanoaga.banadera11@gmail.com</p>
+            <button id="instagram">Instagram</button>
+            <button id="myPlayground">My Playground</button>
+        </nav>
+        <img src="Animated.jpeg" alt="img">
+        <p class="name adrian">ADRIAN</p>
+        <p class="name george">GEORGE</p>
+        <p class="name andres">ANDRES</p>
+        <button id="latestProject">Latest Project</button>
+    </div>
+
+    <div class="secondBox">
+        <a href="https://github.com/Adrian-Lascano" target="_blank"><img src="logo_github.svg" alt="GitHub"></a>
+        <img src="logo_vscode.png" alt="VS Code">
+        <img src="logo_MAas.png" alt="MAas Compositions">
+        <a href="https://open.spotify.com/user/226hgyyt43nx4ncoqfb25veyq?si=86e387a61db6467c" target="_blank"><img src="logo_spotify.svg" alt="Spotify"></a>
+    </div>
+
+    <div id="playgroundPopup" class="popup hidden">
+        <div class="backdrop"></div>
+        <div class="popupContent">
+            <h3>My Creative Playground!</h3>
+            <ul id="workLinks"></ul>
+        </div>
+    </div>
+
+    <div class="thirdBox">
+        <h2>
+            Engineering structure,<br>composing experiences.
+        </h2>
+        <p id="subtext">Code & Craft</p>
+        <div class="skills">
+            <div class="skill">
+                <h3>
+                    🌐<br>
+                    Front-End Development
+                </h3>
+                <p class="skillText">
+                    Building clean, responsive, and accessible websites with attention to structure, performance, and detail.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>
+                    🎨<br>
+                    UI & Interaction Design
+                </h3>
+                <p class="skillText">
+                    Designing layouts and interactions that are intuitive, visually balanced, and enjoyable to explore.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>
+                    🎸<br>
+                    Music & Guitar
+                </h3>
+                <p class="skillText">
+                    Expressing emotion through guitar, composition, and sound, bringing rhythm and flow into my creative process.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>
+                    🎧<br>
+                    Song Creativity
+                </h3>
+                <p class="skillText">
+                    Arranging, recording, and shaping ideas into complete songs, blending technical precision with artistic expression.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="fourthBox">
+        <h2>Tell me about your next project</h2>
+        <button id="nextProject">✉️ Email</button>
+        <p id="bottomFooter">Design inspired by Pinterest — code, content, and customization by Adrian George Andres.</p>
+    </div>
+
+<script src="portfolioLinks.js"></script>
+<script>
+    document.getElementById("instagram").onclick = function(){
+        window.open("https://www.instagram.com/aga_notfound");
+    };
+    document.getElementById("latestProject").onclick = function(){
+        window.open("https://adrian-lascano.github.io/MAas-Compositions/","_blank");
+    };
+    document.getElementById("nextProject").onclick = function() {
+        window.open("https://mail.google.com/mail/?view=cm&fs=1&to=lascanoaga.banadera11@gmail.com&su=Collab!&body=Hello!+Let%27s+collaborate!","_blank");
+    };
+
+    document.getElementById("myPlayground").onclick = function(){
+        const popup = document.getElementById("playgroundPopup");
+        popup.classList.remove("hidden");
+        popup.querySelector(".popupContent").classList.add("active");
+    };
+    document.querySelector(".backdrop").onclick = function(){
+        const popup = document.getElementById("playgroundPopup");
+        popup.classList.add("hidden");
+        popup.querySelector(".popupContent").classList.remove("active");
+    };
+
+    const menu = document.getElementById("workLinks");
+        if(typeof portfolioLinks !== 'undefined') {
+            Object.entries(portfolioLinks)
+                .sort((a, b) => a[1].projectName.localeCompare(b[1].projectName))
+                .forEach(([key, project]) => {
+                    const li = document.createElement("li");
+                    const a = document.createElement("a");
+                    a.href = key;
+                    a.target = "_blank";
+                    a.textContent = project.projectName;
+                    li.appendChild(a);
+                    menu.appendChild(li);
+                    });
+        }
+        else {
+            console.error("portfolioLinks is not defined.");
+        }
+// Check user's device
+	function detectDevice() {
+		const body = document.body;
+		const width = window.innerWidth;
+		const height = window.innerHeight;
+		const isPortrait = height > width;
+
+		let device;
+
+		if (width > 1200) {
+			device = "Desktop";
+		} else if (isPortrait && width <= 768) {
+			device = "Phone";
+		} else {
+			device = "Tablet/iPad";
+		}
+
+		body.setAttribute("data-device", device);
+		document.getElementById("debug").innerHTML = device;
+		console.log("Width:", width, "Height:", height, "Orientation:", isPortrait ? "Portrait" : "Landscape", "Device:", device);
+	}
+// Call detectDevice on page load
+	document.addEventListener("DOMContentLoaded", function() {
+		detectDevice();
+	});
+// Optional: Also call on window resize for dynamic updates
+	window.addEventListener("resize", detectDevice);
+</script>
+</body>
+</html>
